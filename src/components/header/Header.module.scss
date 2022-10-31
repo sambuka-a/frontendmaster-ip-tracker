@@ -1,0 +1,86 @@
+@import '../../Styles/variables.scss';
+
+.header {
+    height: $headerHeightSm;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: url('../../assets/pattern-bg.png');
+
+    @include breakpoint(md) {
+        height: $headerHeightSm;
+    }
+
+    @include breakpoint(lg) {
+        height: $headerHeightSm;
+        margin-top: 30px;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            font-family: $rubikFont;
+            font-weight: $fw-light;
+            font-size: $fs-sm;
+            color: $white;
+
+            @include breakpoint(sm) {
+                font-size: $fs-reg;
+            }
+        }
+
+        .form {
+            margin: 0 50px;
+            display: flex;
+    
+            input {
+                padding: 5px 10px;
+                border-radius: 10px 0 0 10px;
+                outline: none;
+                border: none;
+                width: 100%;
+                @include breakpoint(sm) {
+                    padding: 10px 20px;
+                }
+            }
+
+            .error {
+                border-right: none;
+                box-shadow: inset 0px 0px 3px 3px #eb8d8d;   
+            }
+    
+            button {
+                padding: 15px;
+                border-radius: 0 10px 10px 0;
+                outline: none;
+                border: none;
+                background-color: $black;
+                transition: 0.3s;
+                @include breakpoint(sm) {
+                    padding: 20px;
+                }
+
+                &:hover {
+                    background-color: $data;
+                }
+            }
+    
+            .chevron{
+                &:before {
+                    color: $white;
+                    border-style: solid;
+                    border-width: 3px 3px 0 0;
+                    content: '';
+                    display: inline-block;
+                    height: 9px;
+                    transform: rotate(45deg);
+                    width: 9px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,51 @@
+//colors
+$data: hsl(0, 0%, 17%);
+$headers: hsl(0, 0%, 59%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+//font
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+$rubikFont: 'Rubik', sans-serif;
+
+//font weight
+$fw-light: 400;
+$fw-regular: 500;
+$fw-bold: 700;
+
+//font sizes
+$fs-xs: 10px;
+$fs-sm: 16px;
+$fs-reg: 32px;
+
+//spacing
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+//header height
+$headerHeightSm: 250px;
+$headerHeightMd: 200px;
+
+//breakpoints
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+
+@mixin breakpoint($point) {
+    @if $point == sm {
+        @media(min-width: $sm) {
+            @content
+        }
+    }
+    @if $point == md {
+        @media(min-width: $md) {
+            @content
+        }
+    }
+    @if $point == lg {
+        @media(min-width: $lg) {
+            @content
+        }
+    }
+}

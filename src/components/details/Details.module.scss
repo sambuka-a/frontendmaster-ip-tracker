@@ -1,0 +1,99 @@
+@import '../../Styles/variables.scss';
+
+.result {
+    position: relative;
+    z-index: 100000;
+    max-width: 1140px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: -130px;
+    
+
+    @include breakpoint(sm) {
+        margin-top: -100px;
+        margin-bottom: -30px; 
+    }
+
+    @include breakpoint(md) {
+        margin-top: -90px;
+        margin-bottom: -40px; 
+    }
+
+    .container {
+        display: flex;
+        max-width: 100%;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 20px;
+        margin: 10px 50px;
+        padding: 10px 5px;
+        box-shadow: $data 0px 3px 8px;
+
+        @include breakpoint(sm) {
+            height: 160px;
+            justify-content:space-around;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint(md) {
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .details {
+            padding: 10px 20px;
+            font-family: $rubikFont;
+            font-size: $fs-xs;
+            text-align: center;
+
+            @include breakpoint(md) {
+                padding: 0px 10px;
+
+                &:not(:first-child) {
+                    border-left: 1px solid $headers;
+                }
+            }
+
+            @include breakpoint(lg) {
+                text-align: left;
+                padding: 0px 20px;
+            }
+
+            .title {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: $fw-regular;
+                font-size: $fs-xs;
+                color: $headers;
+                padding-bottom: 10px;
+            }
+
+            .titleError {
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: $fw-regular;
+                font-size: $fs-xs;
+                color: $headers;
+                padding-bottom: 10px;
+            }
+
+            .det {
+                letter-spacing: 2px;
+                font-weight: $fw-bold;
+                color: $data;
+                font-size: $fs-sm;
+                padding-bottom: 10px;
+            }
+
+            .detError {
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: $fw-regular;
+                font-size: $fs-sm;
+                color: $headers;
+            }
+        }
+    }
+}
