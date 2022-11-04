@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/frontendmentor-ip-tracker/static/css/main.8d4b0354.css",
+    "main.js": "/frontendmentor-ip-tracker/static/js/main.5ae6621d.js",
+    "static/media/pattern-bg.png": "/frontendmentor-ip-tracker/static/media/pattern-bg.a60a3c85aa8b88aac4b7.png",
+    "index.html": "/frontendmentor-ip-tracker/index.html",
+    "static/media/icon-location.svg": "/frontendmentor-ip-tracker/static/media/icon-location.7e6459d2a9278295ae782e100965be4b.svg",
+    "main.8d4b0354.css.map": "/frontendmentor-ip-tracker/static/css/main.8d4b0354.css.map",
+    "main.5ae6621d.js.map": "/frontendmentor-ip-tracker/static/js/main.5ae6621d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d4b0354.css",
+    "static/js/main.5ae6621d.js"
+  ]
+}
