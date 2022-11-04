@@ -2,7 +2,6 @@ import { InfinitySpin } from 'react-loader-spinner'
 import styles from './Details.module.scss'
 
 const Details = ({ip, location, isp, error = null, loading = 'idle'}) => {
-console.log(loading, error);
 
   return (
     <div className={styles.result}>

@@ -13,7 +13,6 @@ function App() {
         setIpData({loading: 'loading'})
         const res = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&${q}`)
         setIpData(res.data)
-        console.log(res);
       } catch(err) {
         setIpData({error: err.message});
       }
