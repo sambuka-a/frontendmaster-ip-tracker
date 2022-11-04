@@ -8,7 +8,7 @@ function App() {
 
   const [ipData, setIpData] = useState({});
 
-  const getData = async (q = 'ipAddress=1.1.1.1') => {
+  const getData = async (q = 'ipAddress=') => {
       try {
         setIpData({loading: 'loading'})
         const res = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&${q}`)
