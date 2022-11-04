@@ -15,7 +15,7 @@ export const newicon = new Leaflet.Icon({
   iconSize: [40, 50]
 });
 
-const Map = ({lat, lon, status}) => {
+const Map = ({ip, location}) => {
 
   function ChangeView({ center, zoom }) {
     const map = useMap();
@@ -26,14 +26,13 @@ const Map = ({lat, lon, status}) => {
   const mapRef = useRef();
   const zoom = 16;
   const containerStyle = {
-      width: "100%",
-      height: '75vh',
+      height: '70vh',
   }
 
   const marker = {
         position: {
-            lat: lat,
-            lng: lon,
+            lat: location?.lat,
+            lng: location?.lng,
         },
         draggable: false,
         icon: newicon,
@@ -41,7 +40,7 @@ const Map = ({lat, lon, status}) => {
 
   return (
     <div className={styles.mapContainer}>
-      {status === 'success' && 
+      {ip && 
         <MapContainer
         style={containerStyle}
         center={marker.position}
@@ -56,7 +55,7 @@ const Map = ({lat, lon, status}) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <ZoomControl position="bottomleft"/>
+        <ZoomControl position="topleft"/>
         <Marker position={marker.position} icon={newicon}>
           <Popup>
             <p>Peekaboo</p>

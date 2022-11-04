@@ -8,11 +8,12 @@ function App() {
 
   const [ipData, setIpData] = useState({});
 
-  const getData = async (q = '') => {
+  const getData = async (q = 'ipAddress=1.1.1.1') => {
       try {
         setIpData({loading: 'loading'})
-        const res = await axios.get(`http://ip-api.com/json/${q}?fields=status,message,region,regionName,city,zip,lat,lon,offset,timezone,isp,query`)
+        const res = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&${q}`)
         setIpData(res.data)
+        console.log(res);
       } catch(err) {
         setIpData({error: err.message});
       }
@@ -22,7 +23,6 @@ function App() {
   useEffect(() => {
     getData()
   }, [])
-
 
   return (
     <>

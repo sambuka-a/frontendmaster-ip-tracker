@@ -19,10 +19,13 @@ const Header = ({handleClick}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(value.length > 0 && (validIpAddressRegex.test(value) || validHostnameRegex.test(value))) {
-      handleClick(value)
+    if(value.length > 0 && validIpAddressRegex.test(value)) {
+      handleClick(`ipAddress=${value}`)
       setError(false)
-    } else {
+    } else if(value.length > 0 && validHostnameRegex.test(value)) {
+      handleClick(`domain=${value}`)
+        setError(false)
+    }else {
       setError(true)
     }
     setValue('')

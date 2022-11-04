@@ -1,10 +1,8 @@
-import {DateTime} from 'luxon'
 import { InfinitySpin } from 'react-loader-spinner'
 import styles from './Details.module.scss'
 
-const Details = ({query, regionName, city, zip, timezone, isp, status, message, error, loading = 'idle'}) => {
-  
-  const UTCTime = DateTime.now().setZone(timezone).toISO()
+const Details = ({ip, location, isp, error = null, loading = 'idle'}) => {
+console.log(loading, error);
 
   return (
     <div className={styles.result}>
@@ -12,36 +10,36 @@ const Details = ({query, regionName, city, zip, timezone, isp, status, message, 
       <div className={styles.container}>
         <div className={styles.details}>
           <div className={styles.titleError}>Loading...</div>
-          <div>
-          <InfinitySpin 
-            width='200'
+          <div className={styles.spinner}>
+          <InfinitySpin
+            width='170'
             color="#2b2b2b"
           />
           </div>
         </div>
       </div>
       }
-      {(status === 'fail' || error) && 
+      {error && 
       <div className={styles.container}>
         <div className={styles.details}>
           <div className={styles.titleError}>An Error Occured...</div>
-          <div className={styles.detError}>{message || error}</div>
+          <div className={styles.detError}>{error}</div>
         </div>
       </div>
       }
-      {status === 'success' && 
+      {ip &&
       <div className={styles.container}>
         <div className={styles.details}>
           <div className={styles.title}>IP Address</div>
-          <div className={styles.det}>{query}</div>
+          <div className={styles.det}>{ip}</div>
         </div>
         <div className={styles.details}>
           <div className={styles.title}>Location</div>
-          <div className={styles.det}>{`${regionName}, ${city}, ${zip}`}</div>
+          <div className={styles.det}>{`${location.region}, ${location.country} ${location.postalCode}`}</div>
         </div>
         <div className={styles.details}>
           <div className={styles.title}>Timezone</div>
-          <div className={styles.det}>{`UTC ${UTCTime.slice(-6)}`}</div>
+          <div className={styles.det}>{`UTC ${location.timezone}`}</div>
           </div>
         <div className={styles.details}>
           <div className={styles.title}>ISP</div>
