@@ -1,6 +1,6 @@
 {
-  "homepage": "http://sambuka-a.github.io/frontendMentor-IPtracker-app",
-  "name": "geo-ip-map-pet-project",
+  "homepage": "http://sambuka-a.github.io/frontendmentor-ip-tracker",
+  "name": "frontendmentor-ip-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
